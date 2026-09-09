@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arroz Montañero - Delicias de la Negra</title>
+    <meta name="description" content="Pide el Arroz Montañero de Delicias de la Negra directo a tu puerta.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="wrap">
+
+        <!-- ===== TARJETA DEL PLATO ===== -->
+        <section class="dish-card" id="dishCard">
+            <img class="dish-img" src="imgarroz.jpg.jpg" alt="Arroz Montañero">
+            <div class="dish-body">
+                <span class="dish-tag">🍽️ Delicias de la Negra</span>
+                <h1 class="dish-name">Arroz Montañero</h1>
+                <p class="dish-desc">Delicioso arroz montañero preparado con nuestro toque casero, directo hasta tu puerta.</p>
+                <div class="dish-price">$10.000 <small>COP</small></div>
+
+                <div class="qty-row">
+                    <span class="qty-label">Cantidad</span>
+                    <div class="qty-control">
+                        <button class="qty-btn" id="qtyMinus" aria-label="Restar">−</button>
+                        <span class="qty-value" id="qtyValue">1</span>
+                        <button class="qty-btn" id="qtyPlus" aria-label="Sumar">+</button>
+                    </div>
+                </div>
+
+                <button class="btn-order" id="orderBtn">
+                    <i class="fas fa-motorcycle"></i> PEDIR AHORA · <span id="orderTotal">$10.000</span>
+                </button>
+
+                <a href="https://wa.me/573113378336?text=%C2%A1Hola!%20Quiero%20pedir%20Arroz%20Monta%C3%B1ero" target="_blank" rel="noopener noreferrer" class="btn-wa-link">
+                    <i class="fab fa-whatsapp"></i> Prefiero escribir por WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== FORMULARIO DE DOMICILIO ===== -->
+        <section class="form-card" id="formCard">
+            <button class="form-back" id="formBack" aria-label="Volver">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h2 class="form-title">📋 Datos para tu domicilio</h2>
+            <p class="form-summary" id="formSummary">Arroz Montañero x1 — $10.000</p>
+
+            <div class="form-group" id="fg-name">
+                <label for="ord-name">Nombre completo *</label>
+                <input type="text" id="ord-name" placeholder="Tu nombre" autocomplete="name" maxlength="80">
+                <div class="error">Por favor ingresa tu nombre.</div>
+            </div>
+            <div class="form-group" id="fg-whatsapp">
+                <label for="ord-whatsapp">WhatsApp *</label>
+                <input type="tel" id="ord-whatsapp" placeholder="Ej: 3113378336" autocomplete="tel" maxlength="20">
+                <div class="error">Por favor ingresa un número válido.</div>
+            </div>
+            <div class="form-group" id="fg-address">
+                <label for="ord-address">Dirección *</label>
+                <input type="text" id="ord-address" placeholder="Calle, carrera, número" autocomplete="street-address" maxlength="120">
+                <div class="error">Por favor ingresa tu dirección.</div>
+            </div>
+            <div class="form-row">
+                <div class="form-group" id="fg-neighborhood">
+                    <label for="ord-neighborhood">Barrio *</label>
+                    <input type="text" id="ord-neighborhood" placeholder="Barrio" maxlength="60">
+                    <div class="error">Campo requerido.</div>
+                </div>
+                <div class="form-group" id="fg-reference">
+                    <label for="ord-reference">Referencia</label>
+                    <input type="text" id="ord-reference" placeholder="Casa, apto, etc." maxlength="60">
+                </div>
+            </div>
+            <div class="form-group" id="fg-payment">
+                <label for="ord-payment">Método de pago *</label>
+                <select id="ord-payment">
+                    <option value="">Selecciona...</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Nequi">Nequi</option>
+                    <option value="Daviplata">Daviplata</option>
+                    <option value="Bancolombia">Bancolombia</option>
+                    <option value="Transferencia">Transferencia</option>
+                </select>
+                <div class="error">Selecciona un método de pago.</div>
+            </div>
+            <div class="form-group">
+                <label for="ord-notes">Observaciones</label>
+                <textarea id="ord-notes" placeholder="Alguna indicación especial..." maxlength="300"></textarea>
+            </div>
+
+            <button class="btn-order" id="sendOrderBtn">
+                <i class="fab fa-whatsapp"></i> ENVIAR PEDIDO
+            </button>
+        </section>
+
+    </main>
+
+    <!-- ===== TOAST ===== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ===== WHATSAPP FLOTANTE ===== -->
+    <a href="https://wa.me/573113378336" target="_blank" rel="noopener noreferrer" class="float-wa" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>
